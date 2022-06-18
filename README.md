@@ -1,3 +1,5 @@
+# forked from [facebookresearch/barlowtwins](https://github.com/facebookresearch/barlowtwins)
+
 Barlow Twins: Self-Supervised Learning via Redundancy Reduction
 ---------------------------------------------------------------
 
