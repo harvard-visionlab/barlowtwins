@@ -60,8 +60,7 @@ def resnet50_barlowtwins_backbone(pretrained=True, **kwargs):
     return model, transform
 
 def resnet50_barlowtwins(pretrained=True, **kwargs):
-    """Official resnet50 barlowtwins model (including mlp head) from `Barlow Twins: Self-Supervised Learning 
-    via Redundancy Reduction <https://arxiv.org/abs/2103.03230>`__.
+    """Official resnet50 barlowtwins model (including mlp head) from `Barlow Twins: Self-Supervised Learning via Redundancy Reduction <https://arxiv.org/abs/2103.03230>`__.
     
         Args:
             pretrained (bool): whether to load pre-trained weights
