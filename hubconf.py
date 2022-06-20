@@ -14,6 +14,7 @@
 
 import os
 import torch
+import torchvision
 from torchvision.models.resnet import resnet50 as _resnet50
 from wrappers import BarlowTwins as _BarlowTwins
 from wrappers import BarlowTwinsAlexnetGN as _BarlowTwinsAlexnetGN
