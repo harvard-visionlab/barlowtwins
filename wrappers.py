@@ -33,7 +33,7 @@ class BarlowTwins(nn.Module):
         return z
     
 class BarlowTwinsAlexnetGN(nn.Module):
-    def __init__(self, backbone, projector_sizes=[4096,4096,4096]):
+    def __init__(self, projector_sizes=[4096,4096,4096]):
         super().__init__()
         self.backbone = alexnet_gn()
         self.flatten = nn.Flatten()
