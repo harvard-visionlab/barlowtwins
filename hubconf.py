@@ -103,7 +103,7 @@ def alexnetgn_barlowtwins(pretrained=True, **kwargs):
         
     """
     
-    model = _BarlowTwinsAlexnetGN(**kwargs).backbone
+    model = _BarlowTwinsAlexnetGN(**kwargs)
     if pretrained:
         checkpoint = torch.hub.load_state_dict_from_url(
             url='https://visionlab-pretrainedmodels.s3.amazonaws.com/model_zoo/barlowtwins/alexnetgn_barlowtwins_imagenet_final-975ccbd885.pth.tar', 
