@@ -90,14 +90,3 @@ def alexnet_gn(**kwargs):
     model = AlexnetGN(**kwargs)
     
     return model
-    
-if __name__ == '__main__':
-
-    import torch
-    model = alexnet_gn().cuda()
-    data = torch.rand(10, 3, 224, 224).cuda()
-    out = model.compute_feat(data, 5)
-
-    for i in range(10):
-        out = model.compute_feat(data, i)
-        print(i, out.shape)
