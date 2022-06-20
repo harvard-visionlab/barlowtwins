@@ -46,7 +46,8 @@ def resnet50_barlowtwins_backbone(pretrained=True, **kwargs):
     if pretrained:
         cache_file_name="resnet50_barlowtwins-cf015f40cc.pth"
         state_dict = torch.hub.load_state_dict_from_url(
-            url='https://dl.fbaipublicfiles.com/barlowtwins/ep1000_bs2048_lrw0.2_lrb0.0048_lambd0.0051/resnet50.pth', 
+            #url='https://dl.fbaipublicfiles.com/barlowtwins/ep1000_bs2048_lrw0.2_lrb0.0048_lambd0.0051/resnet50.pth', 
+            url='https://dl.fbaipublicfiles.com/barlowtwins/ljng/resnet50.pth',
             map_location='cpu',
             file_name=cache_file_name,
             check_hash=True
