@@ -7,9 +7,9 @@ from IPython.core.debugger import set_trace
 
 __all__ = ['alexnet_gn']
 
-class alexnet_gn(nn.Module):
+class AlexnetGN(nn.Module):
     def __init__(self, in_channel=3, out_dim=128, l2norm=True):
-        super(alexnet_gn, self).__init__()
+        super(AlexnetGN, self).__init__()
         self._l2norm = l2norm
         conv_block_1 = nn.Sequential(
             nn.Conv2d(in_channel, 96, 11, 4, 2, bias=False),
@@ -86,7 +86,11 @@ class Normalize(nn.Module):
         out = x.div(norm)
         return out
 
-
+def alexnet_gn(**kwargs):
+    model = AlexnetGN(**kwargs)
+    
+    return model
+    
 if __name__ == '__main__':
 
     import torch
