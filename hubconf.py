@@ -73,12 +73,13 @@ def resnet50_barlowtwins(pretrained=True, **kwargs):
     model = _BarlowTwins(**kwargs)
     if pretrained:
         cache_file_name="resnet50_barlowtwins_fullckpt-b3d2bfdffc.pth"
-        state_dict = torch.hub.load_state_dict_from_url(
+        checkpoint = torch.hub.load_state_dict_from_url(
             url='https://dl.fbaipublicfiles.com/barlowtwins/ljng/checkpoint.pth', 
             map_location='cpu',
             file_name=cache_file_name,
             check_hash=True
         )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['model'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = 'b3d2bfdffc'
         model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
@@ -101,11 +102,12 @@ def alexnetgn_barlowtwins(pretrained=True, **kwargs):
     
     model = _BarlowTwinsAlexnetGN(**kwargs)
     if pretrained:
-        state_dict = torch.hub.load_state_dict_from_url(
+        checkpoint = torch.hub.load_state_dict_from_url(
             url='https://visionlab-pretrainedmodels.s3.amazonaws.com/model_zoo/barlowtwins/alexnetgn_barlowtwins_imagenet_final-975ccbd885.pth.tar', 
             map_location='cpu',
             check_hash=True
         )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = '975ccbd885'
         model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
