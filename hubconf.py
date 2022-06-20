@@ -30,15 +30,14 @@ def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229
     return transform
 
 def resnet50_barlowtwins_backbone(pretrained=True, **kwargs):
-    """Official resnet50 barlowtwins model (resnet50 backbone only) from `Barlow Twins: Self-Supervised Learning 
-    via Redundancy Reduction <https://arxiv.org/abs/2103.03230>`__.
+    """Official resnet50 barlowtwins model (resnet50 backbone only) from `Barlow Twins: Self-Supervised Learning via Redundancy Reduction <https://arxiv.org/abs/2103.03230>`__.
     
-        Args:
-            pretrained (bool): whether to load pre-trained weights
+    Args:
+        pretrained (bool): whether to load pre-trained weights
 
-        returns: model, transform
-            model: the requested model
-            transform: the validation transforms needed to pre-process images
+    returns: model, transform
+        model: the requested model
+        transform: the validation transforms needed to pre-process images
     """
     
     model = _resnet50(pretrained=False, **kwargs)
@@ -62,12 +61,12 @@ def resnet50_barlowtwins_backbone(pretrained=True, **kwargs):
 def resnet50_barlowtwins(pretrained=True, **kwargs):
     """Official resnet50 barlowtwins model (including mlp head) from `Barlow Twins: Self-Supervised Learning via Redundancy Reduction <https://arxiv.org/abs/2103.03230>`__.
     
-        Args:
-            pretrained (bool): whether to load pre-trained weights
+    Args:
+        pretrained (bool): whether to load pre-trained weights
 
-        returns: model, transform
-            model: the requested model
-            transform: the validation transforms needed to pre-process images
+    returns: model, transform
+        model: the requested model
+        transform: the validation transforms needed to pre-process images
         
     """
     
@@ -91,12 +90,12 @@ def resnet50_barlowtwins(pretrained=True, **kwargs):
 def alexnetgn_barlowtwins(pretrained=True, **kwargs):
     """Unofficial (harvard-visionlab's) alexnet_gn barlowtwins model (including mlp head).
     
-        Args:
-            pretrained (bool): whether to load pre-trained weights
+    Args:
+        pretrained (bool): whether to load pre-trained weights
 
-        returns: model, transform
-            model: the requested model
-            transform: the validation transforms needed to pre-process images
+    returns: model, transform
+        model: the requested model
+        transform: the validation transforms needed to pre-process images
         
     """
     
