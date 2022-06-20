@@ -103,11 +103,9 @@ def alexnetgn_barlowtwins(pretrained=True, **kwargs):
     
     model = _BarlowTwinsAlexnetGN(**kwargs)
     if pretrained:
-        cache_file_name="alexnetgn_barlowtwins_imagenet_final-975ccbd885.pth.tar"
         state_dict = torch.hub.load_state_dict_from_url(
             url='https://visionlab-pretrainedmodels.s3.amazonaws.com/model_zoo/barlowtwins/alexnetgn_barlowtwins_imagenet_final-975ccbd885.pth.tar', 
             map_location='cpu',
-            file_name=cache_file_name,
             check_hash=True
         )
         model.load_state_dict(state_dict, strict=True)
