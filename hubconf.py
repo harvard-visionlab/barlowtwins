@@ -12,6 +12,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import os
 import torch
 from torchvision.models.resnet import resnet50 as _resnet50
 from wrappers import BarlowTwins as _BarlowTwins
